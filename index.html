@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yogeshwari - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: rgb(0, 0, 33);
+        color: white;
+        font-family: "Poppins", sans-serif;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 80px;
+        background-color: rgb(18, 18, 62);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        list-style: none;
+        margin: 0 23px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: rgb(109, 109, 216);
+        font-size: 1.02rem;
+      }
+
+      main hr {
+        border: 0;
+        background-color: rgb(149, 149, 241);
+        height: 1.2px;
+        margin: 40px 84px;
+      }
+
+      .left {
+        font-size: 1.5rem;
+      }
+
+      .firstSection {
+        display: flex;
+        justify-content: space-around;
+        margin: 150px 0;
+        align-items: center;
+      }
+
+      .firstSection > div {
+        width: 40%;
+      }
+
+      .leftSection {
+        font-size: 3rem;
+      }
+
+      .leftSection .buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+        flex-wrap: wrap;
+      }
+
+      .leftSection .btn {
+        display: inline-block;
+        padding: 10px 25px;
+        background: #1e2167;
+        color: white;
+        border: 1.5px solid white;
+        border-radius: 3px;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        min-width: 120px;
+      }
+
+      .leftSection .btn:hover {
+        background: rgb(169, 86, 246);
+        border-color: rgb(169, 86, 246);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(169, 86, 246, 0.3);
+      }
+
+      .leftSection .btn:active {
+        transform: translateY(0);
+      }
+
+      .purple {
+        color: rgb(169, 86, 246);
+      }
+
+      .text-gray {
+        color: gray;
+      }
+
+      #element {
+        color: rgb(169, 86, 246);
+      }
+
+      /* About Section */
+      .aboutSection {
+        max-width: 80vw;
+        margin: auto;
+        padding: 40px 0 60px 0;
+      }
+
+      .aboutSection h1 {
+        font-size: 1.9rem;
+        margin-bottom: 30px;
+      }
+
+      .about-content {
+        display: flex;
+        gap: 60px;
+        align-items: center;
+        background-color: rgb(18, 18, 62);
+        padding: 40px;
+        border-radius: 15px;
+        border-left: 4px solid rgb(169, 86, 246);
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-text p {
+        color: #ccc;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+      }
+
+      .about-text .highlight {
+        color: rgb(169, 86, 246);
+        font-weight: 600;
+      }
+
+      .about-image {
+        flex: 0 0 200px;
+        text-align: center;
+      }
+
+      .about-image img {
+        border-radius: 50%;
+        border: 4px solid rgb(169, 86, 246);
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .secondSection {
+        max-width: 80vw;
+        margin: auto;
+        height: auto;
+        padding-bottom: 450px;
+      }
+
+      .secondSection h1 {
+        font-size: 1.9rem;
+      }
+
+      .secondSection .box {
+        background: white;
+        width: 80vw;
+        height: 2px;
+        margin: 56px 0;
+        display: flex;
+      }
+
+      .secondSection .vertical {
+        height: 93px;
+        width: 1px;
+        background-color: white;
+        margin: 0 200px;
+      }
+
+      .vertical-title {
+        position: relative;
+        top: 100px;
+        width: 150px;
+      }
+
+      .vertical-desc {
+        position: relative;
+        top: 100px;
+        color: gray;
+        width: 120px;
+        font-size: 9px;
+      }
+
+      .company-name {
+        color: rgb(169, 169, 241);
+        font-weight: 600;
+      }
+
+      /* Projects Section */
+      .projectsSection {
+        max-width: 80vw;
+        margin: auto;
+        padding: 40px 0 60px 0;
+      }
+
+      .projectsSection h1 {
+        font-size: 1.9rem;
+        margin-bottom: 30px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .project-card {
+        background-color: rgb(18, 18, 62);
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 4px solid rgb(169, 86, 246);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(169, 86, 246, 0.2);
+      }
+
+      .project-card h3 {
+        color: rgb(169, 169, 241);
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+      }
+
+      .project-card p {
+        color: #ccc;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .project-card .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .project-card .tech-tag {
+        background-color: rgb(0, 0, 33);
+        color: rgb(169, 86, 246);
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        border: 1px solid rgb(169, 86, 246);
+      }
+
+      /* Skills Section */
+      .skillsSection {
+        max-width: 80vw;
+        margin: auto;
+        padding: 40px 0 60px 0;
+      }
+
+      .skillsSection h1 {
+        font-size: 1.9rem;
+        margin-bottom: 30px;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .skill-category {
+        background-color: rgb(18, 18, 62);
+        padding: 25px;
+        border-radius: 10px;
+        border-top: 3px solid rgb(169, 86, 246);
+      }
+
+      .skill-category h3 {
+        color: rgb(169, 169, 241);
+        font-size: 1rem;
+        margin-bottom: 15px;
+      }
+
+      .skill-category .skill-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill-category .skill-item {
+        background-color: rgb(0, 0, 33);
+        color: #ccc;
+        padding: 5px 14px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        border: 1px solid #333;
+        transition: 0.3s;
+      }
+
+      .skill-category .skill-item:hover {
+        border-color: rgb(169, 86, 246);
+        color: white;
+      }
+
+      footer {
+        background-color: rgb(21, 21, 46);
+      }
+
+      .footer {
+        display: flex;
+        padding: 23px 122px;
+        justify-content: space-evenly;
+      }
+
+      .footer ul {
+        list-style: none;
+      }
+
+      .footer ul li {
+        margin: 10px 0;
+      }
+
+      .footer ul li a {
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+      }
+
+      .footer ul li a:hover {
+        color: rgb(169, 86, 246);
+        padding-left: 5px;
+      }
+
+      .footer > div {
+        width: 223px;
+      }
+
+      footer .footer-rights {
+        text-align: center;
+        color: gray;
+        padding: 12px 0;
+      }
+
+      /* Section divider */
+      .section-divider {
+        border: 0;
+        background-color: rgb(149, 149, 241);
+        height: 1.2px;
+        margin: 40px 84px;
+      }
+
+      @media (max-width: 768px) {
+        .firstSection {
+          flex-direction: column;
+          margin: 50px 0;
+        }
+        .firstSection > div {
+          width: 80%;
+        }
+        .leftSection {
+          font-size: 2rem;
+        }
+        .leftSection .btn {
+          padding: 8px 20px;
+          font-size: 12px;
+          min-width: 100px;
+        }
+
+        .about-content {
+          flex-direction: column;
+          padding: 20px;
+        }
+
+        .about-image {
+          flex: 0 0 auto;
+        }
+
+        .about-image img {
+          width: 150px;
+          height: 150px;
+        }
+
+        .secondSection .box {
+          display: none;
+        }
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer {
+          flex-direction: column;
+          padding: 23px 40px;
+        }
+        .footer > div {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">Yogeshwari's Portfolio</div>
+        <div class="right">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="firstSection" id="home">
+        <div class="leftSection">
+          Hi, My name is <span class="purple">Yogeshwari Joshi</span>
+          <div>And I am a</div>
+          <span id="element"></span>
+
+          <div class="buttons">
+            <a href="yogeshwari_resume.pdf" download class="btn"
+              >📄 Download Resume</a
+            >
+            <a
+              href="https://github.com/JOSHIYOGESHWARI"
+              target="_blank"
+              class="btn"
+              >🐙 GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="rightSection">
+          <img
+            src="me.jpeg"
+            alt="Yogeshwari's Image"
+            width="500px"
+            height="400px"
+          />
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <!-- About Section -->
+      <section class="aboutSection" id="about">
+        <span class="text-gray">Get to know me</span>
+        <h1>About Me</h1>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              👋 Hey there! I'm <span class="highlight">Yogeshwari Joshi</span>,
+              a passionate
+              <span class="highlight">Java Backend Developer</span> who loves
+              building scalable and efficient systems. With a strong foundation
+              in <span class="highlight">Spring Boot</span> and
+              <span class="highlight">Microservices</span>, I enjoy creating
+              robust REST APIs that power modern applications.
+            </p>
+            <p>
+              💡 I thrive on solving complex problems and writing clean,
+              maintainable code. Whether it's designing database schemas,
+              implementing service-to-service communication, or optimizing
+              application performance, I bring a detail-oriented and
+              collaborative approach to every project.
+            </p>
+            <p>
+              🚀 Beyond coding, I'm passionate about continuous learning,
+              exploring new technologies, and contributing to open-source
+              projects. I believe in the power of teamwork and love sharing
+              knowledge with fellow developers.
+            </p>
+            <p>
+              🎯 <span class="highlight">What drives me:</span> Creating
+              meaningful solutions that make a difference. I'm particularly
+              interested in building scalable backend systems, exploring AI/ML
+              integrations, and staying at the forefront of Java ecosystem
+              innovations.
+            </p>
+            <p>
+              ✨ When I'm not coding, you'll find me reading tech blogs,
+              contributing to developer communities, or experimenting with new
+              technologies. I'm always excited to take on new challenges and
+              collaborate on impactful projects!
+            </p>
+          </div>
+
+          <div class="about-image">
+            <img src="me.jpeg" alt="Yogeshwari Joshi" />
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <!-- Experience Section -->
+      <section class="secondSection">
+        <span class="text-gray">What I have done so far</span>
+        <h1>Experience</h1>
+        <div class="box">
+          <div class="vertical">
+            <div class="vertical-title">
+              <span class="company-name">Numetry Technologies</span>
+              Software Development Intern
+              <br />
+              [Jan 2024 - July 2024]
+            </div>
+            <div class="vertical-desc">
+              <br />
+              Completed a structured trainee program focused on Java, Python,
+              Spring Framework, and MySQL
+              <br />
+              <br />
+              Tested REST APIs using Postman and gained hands-on experience with
+              API development
+              <br />
+              <br />
+              Followed clean coding practices and participated in debugging and
+              code reviews.
+            </div>
+          </div>
+
+          <div class="vertical">
+            <div class="vertical-title">
+              <span class="company-name">Capgemini</span>
+              <br />
+              Analyst
+              <br />
+              [Dec 2024 - May 2025]
+            </div>
+            <div class="vertical-desc">
+              <br />
+              Developed backend applications using Java, Spring Boot, MySQL, and
+              Microservices, improving code quality by 26%.
+              <br />
+              <br />
+              Designed, implemented, and tested REST APIs, improving API
+              reliability and reducing integration effort by 23%.
+              <br />
+              <br />
+              Implemented service-to-service communication using Spring Cloud
+              Netflix Eureka, reducing service management effort by 33%.
+              <br />
+              <br />
+              Used Postman and Swagger for API testing and documentation,
+              decreasing API-related defects by 19%.
+            </div>
+          </div>
+
+          <div class="vertical">
+            <div class="vertical-title">
+              <span class="company-name">HulkHire Tech</span>
+              <br />
+              Java Backend Developer
+              <br />[Feb 2026 - July 2026]
+            </div>
+            <div class="vertical-desc">
+              <br />
+              Completed a structured Internship program focused on Java, Spring
+              Boot, MySQL, and Microservices
+              <br />
+              <br />
+              Worked in an Agile development environment, collaborating with
+              teams to deliver assigned tasks on schedule.
+              <br />
+              <br />
+              Used Git for version control, including creating branches,
+              committing code, merging changes, and collaborating on backend
+              development tasks.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <!-- Projects Section -->
+      <section class="projectsSection" id="projects">
+        <span class="text-gray">My Work</span>
+        <h1>Projects</h1>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>🏨 Hotel Management System</h3>
+            <p>
+              Developed a microservices-based system that streamlines customer
+              management, room booking, billing, inventory, and notification
+              services through scalable REST APIs.
+            </p>
+            <ul
+              style="
+                color: #ccc;
+                font-size: 0.85rem;
+                margin-top: 10px;
+                padding-left: 20px;
+                line-height: 1.8;
+              "
+            >
+              <li>Implemented RESTful APIs using Spring Boot and Spring MVC</li>
+              <li>
+                Seamless communication between services using OpenFeign and
+                Netflix Eureka
+              </li>
+              <li>
+                Designed and managed MySQL databases using Spring Data JPA and
+                Hibernate
+              </li>
+              <li>Tested and documented APIs using Postman and Swagger</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">Microservices</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">JPA</span>
+              <span class="tech-tag">Eureka</span>
+              <span class="tech-tag">OpenFeign</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>🧠 Human Body Action Detection</h3>
+            <p>
+              Developed an AI-based web application that recognizes human body
+              actions from video inputs using supervised machine learning
+              techniques.
+            </p>
+            <ul
+              style="
+                color: #ccc;
+                font-size: 0.85rem;
+                margin-top: 10px;
+                padding-left: 20px;
+                line-height: 1.8;
+              "
+            >
+              <li>Built a supervised learning model using the UCF50 dataset</li>
+              <li>
+                CNN for feature extraction and ELM for action classification
+              </li>
+              <li>
+                Web interface supporting video upload and live camera tracking
+              </li>
+              <li>
+                Used Python, Pandas, NumPy, and Anaconda for data preprocessing
+                and evaluation
+              </li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">CNN</span>
+              <span class="tech-tag">ELM</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>📧 Spam Mail Detection</h3>
+            <p>
+              Developed a machine learning-based system to classify emails as
+              spam or legitimate using natural language processing techniques.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">Scikit-learn</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>🗳️ Online Voting Management System</h3>
+            <p>
+              Built a web application with full CRUD operations for managing
+              voters, candidates, and election data efficiently.
+            </p>
+            <ul
+              style="
+                color: #ccc;
+                font-size: 0.85rem;
+                margin-top: 10px;
+                padding-left: 20px;
+                line-height: 1.8;
+              "
+            >
+              <li>
+                Complete CRUD operations for voter and candidate management
+              </li>
+              <li>Secure authentication and role-based access</li>
+              <li>Real-time vote counting and result display</li>
+            </ul>
+            <div class="tech-stack">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">JPA</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <!-- Skills Section -->
+      <section class="skillsSection" id="skills">
+        <span class="text-gray">My Expertise</span>
+        <h1>Skills</h1>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>💻 Languages</h3>
+            <div class="skill-items">
+              <span class="skill-item">Java</span>
+              <span class="skill-item">Python</span>
+              <span class="skill-item">SQL</span>
+              <span class="skill-item">HTML</span>
+              <span class="skill-item">CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>⚙️ Frameworks & Technologies</h3>
+            <div class="skill-items">
+              <span class="skill-item">Spring Boot</span>
+              <span class="skill-item">Spring Core</span>
+              <span class="skill-item">Spring Data JPA</span>
+              <span class="skill-item">Microservices</span>
+              <span class="skill-item">OpenFeign</span>
+              <span class="skill-item">Netflix Eureka</span>
+              <span class="skill-item">Hibernate</span>
+              <span class="skill-item">RESTful APIs</span>
+              <span class="skill-item">JUnit 5</span>
+              <span class="skill-item">Mockito</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>🗄️ Database</h3>
+            <div class="skill-items">
+              <span class="skill-item">MySQL</span>
+              <span class="skill-item">MySQL Workbench</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>🛠️ Tools & Cloud</h3>
+            <div class="skill-items">
+              <span class="skill-item">Git</span>
+              <span class="skill-item">Postman</span>
+              <span class="skill-item">Swagger</span>
+              <span class="skill-item">SonarQube</span>
+              <span class="skill-item">Jupyter Notebook</span>
+              <span class="skill-item">Power BI</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>🧩 Other Skills</h3>
+            <div class="skill-items">
+              <span class="skill-item">OOP</span>
+              <span class="skill-item">Agile</span>
+              <span class="skill-item">SDLC</span>
+              <span class="skill-item">Teamwork</span>
+              <span class="skill-item">Project Management</span>
+              <span class="skill-item">Adaptability</span>
+              <span class="skill-item">Time Management</span>
+              <span class="skill-item">Team Collaboration</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="footer">
+        <div class="footer-second">
+          <h4>📬 Connect With Me</h4>
+          <ul>
+            <li>
+              <a href="https://github.com/JOSHIYOGESHWARI" target="_blank"
+                >🐙 GitHub</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/yogeshwari-joshi-21182a21b/"
+                target="_blank"
+                >🔗 LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="yogeshwari_resume.pdf" target="_blank">📄 Resume</a>
+            </li>
+            <li>
+              <a href="mailto:joshiy1257@gmail.com">✉️ joshiy1257@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-rights">
+        Copyright &#169; yogeshwarisportfolio.com | All Rights Reserved
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "<i>Java Backend</i> Developer.",
+          "Specialized in Spring Boot &amp; Microservices.",
+        ],
+        typeSpeed: 50,
+      });
+    </script>
+  </body>
+</html>
