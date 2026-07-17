@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yogeshwari - Developer Portfolio</title>
 
-    <!-- 🚀 FAVICON - Rocket emoji in browser tab -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+    <!-- 🚀 FAVICON -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>"
+    />
 
-    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,86 +33,97 @@
         background-color: rgb(0, 0, 33);
         color: white;
         font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
       }
 
+      /* ===== NAVIGATION ===== */
       nav {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        height: 80px;
+        padding: 0 20px;
+        height: 70px;
         background-color: rgb(18, 18, 62);
         position: sticky;
         top: 0;
         z-index: 1000;
+        flex-wrap: wrap;
+      }
+
+      .left {
+        font-size: 1.2rem;
+        font-weight: 600;
       }
 
       nav ul {
         display: flex;
         justify-content: center;
-      }
-
-      nav ul li {
         list-style: none;
-        margin: 0 23px;
+        gap: 15px;
+        flex-wrap: wrap;
       }
 
       nav ul li a {
         text-decoration: none;
         color: white;
         transition: 0.3s;
+        font-size: 0.9rem;
+        white-space: nowrap;
       }
 
       nav ul li a:hover {
         color: rgb(109, 109, 216);
-        font-size: 1.02rem;
       }
 
-      main hr {
+      /* ===== SECTION DIVIDER ===== */
+      .section-divider {
         border: 0;
         background-color: rgb(149, 149, 241);
         height: 1.2px;
-        margin: 40px 84px;
+        margin: 30px 20px;
       }
 
-      .left {
-        font-size: 1.5rem;
-      }
-
+      /* ===== HOME SECTION ===== */
       .firstSection {
         display: flex;
         justify-content: space-around;
-        margin: 150px 0;
         align-items: center;
+        padding: 40px 20px;
+        gap: 30px;
+        flex-wrap: wrap;
       }
 
       .firstSection > div {
-        width: 40%;
+        flex: 1;
+        min-width: 280px;
+        max-width: 500px;
       }
 
       .leftSection {
-        font-size: 3rem;
+        font-size: clamp(1.8rem, 5vw, 3rem);
       }
 
       .leftSection .buttons {
         display: flex;
-        gap: 15px;
-        margin-top: 25px;
+        gap: 12px;
+        margin-top: 20px;
         flex-wrap: wrap;
       }
 
       .leftSection .btn {
         display: inline-block;
-        padding: 10px 25px;
+        padding: 10px 20px;
         background: #1e2167;
         color: white;
         border: 1.5px solid white;
-        border-radius: 3px;
-        font-size: 14px;
+        border-radius: 5px;
+        font-size: 0.85rem;
         cursor: pointer;
         text-decoration: none;
         transition: all 0.3s ease;
         font-family: "Poppins", sans-serif;
         text-align: center;
+        flex: 1;
         min-width: 120px;
       }
 
@@ -121,8 +134,14 @@
         box-shadow: 0 5px 15px rgba(169, 86, 246, 0.3);
       }
 
-      .leftSection .btn:active {
-        transform: translateY(0);
+      .rightSection img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 20px;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .purple {
@@ -137,37 +156,39 @@
         color: rgb(169, 86, 246);
       }
 
-      /* About Section */
+      /* ===== ABOUT SECTION ===== */
       .aboutSection {
-        max-width: 80vw;
+        max-width: 90vw;
         margin: auto;
-        padding: 40px 0 60px 0;
+        padding: 30px 15px;
       }
 
       .aboutSection h1 {
-        font-size: 1.9rem;
-        margin-bottom: 30px;
+        font-size: clamp(1.5rem, 4vw, 1.9rem);
+        margin-bottom: 20px;
       }
 
       .about-content {
         display: flex;
-        gap: 60px;
+        gap: 30px;
         align-items: center;
         background-color: rgb(18, 18, 62);
-        padding: 40px;
+        padding: 25px 20px;
         border-radius: 15px;
         border-left: 4px solid rgb(169, 86, 246);
+        flex-wrap: wrap;
       }
 
       .about-text {
         flex: 1;
+        min-width: 250px;
       }
 
       .about-text p {
         color: #ccc;
-        font-size: 1rem;
+        font-size: clamp(0.85rem, 2vw, 1rem);
         line-height: 1.8;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
       }
 
       .about-text .highlight {
@@ -176,84 +197,84 @@
       }
 
       .about-image {
-        flex: 0 0 200px;
+        flex: 0 0 auto;
         text-align: center;
+        margin: 0 auto;
       }
 
       .about-image img {
         border-radius: 50%;
         border: 4px solid rgb(169, 86, 246);
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         object-fit: cover;
       }
 
+      /* ===== EXPERIENCE SECTION ===== */
       .secondSection {
-        max-width: 80vw;
+        max-width: 90vw;
         margin: auto;
-        height: auto;
-        padding-bottom: 450px;
+        padding: 30px 0;
       }
 
       .secondSection h1 {
-        font-size: 1.9rem;
+        font-size: clamp(1.5rem, 4vw, 1.9rem);
       }
 
       .secondSection .box {
-        background: white;
-        width: 80vw;
-        height: 2px;
-        margin: 56px 0;
         display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 20px;
       }
 
       .secondSection .vertical {
-        height: 93px;
-        width: 1px;
-        background-color: white;
-        margin: 0 200px;
+        background-color: rgb(18, 18, 62);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 3px solid rgb(169, 86, 246);
       }
 
       .vertical-title {
-        position: relative;
-        top: 100px;
-        width: 150px;
+        font-size: 1rem;
+        margin-bottom: 10px;
       }
 
       .vertical-desc {
-        position: relative;
-        top: 100px;
         color: gray;
-        width: 120px;
-        font-size: 9px;
+        font-size: 0.85rem;
+        line-height: 1.6;
       }
 
       .company-name {
         color: rgb(169, 169, 241);
         font-weight: 600;
+        font-size: 1.1rem;
+        display: block;
+        margin-bottom: 2px;
       }
 
-      /* Projects Section */
+      /* ===== PROJECTS SECTION ===== */
       .projectsSection {
-        max-width: 80vw;
+        max-width: 90vw;
         margin: auto;
-        padding: 40px 0 60px 0;
+        padding: 30px 0;
       }
 
       .projectsSection h1 {
-        font-size: 1.9rem;
-        margin-bottom: 30px;
+        font-size: clamp(1.5rem, 4vw, 1.9rem);
+        margin-bottom: 20px;
       }
 
       .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
       }
 
       .project-card {
         background-color: rgb(18, 18, 62);
-        padding: 25px;
+        padding: 20px;
         border-radius: 10px;
         border-left: 4px solid rgb(169, 86, 246);
         transition:
@@ -268,8 +289,8 @@
 
       .project-card h3 {
         color: rgb(169, 169, 241);
-        font-size: 1.2rem;
-        margin-bottom: 12px;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
       }
 
       .project-card p {
@@ -278,65 +299,73 @@
         line-height: 1.6;
       }
 
+      .project-card ul {
+        color: #ccc;
+        font-size: 0.8rem;
+        padding-left: 18px;
+        line-height: 1.8;
+        margin: 10px 0;
+      }
+
       .project-card .tech-stack {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 12px;
+        gap: 6px;
+        margin-top: 10px;
       }
 
       .project-card .tech-tag {
         background-color: rgb(0, 0, 33);
         color: rgb(169, 86, 246);
-        padding: 4px 12px;
+        padding: 3px 10px;
         border-radius: 20px;
         font-size: 0.7rem;
         border: 1px solid rgb(169, 86, 246);
       }
 
-      /* Skills Section */
+      /* ===== SKILLS SECTION ===== */
       .skillsSection {
-        max-width: 80vw;
+        max-width: 90vw;
         margin: auto;
-        padding: 40px 0 60px 0;
+        padding: 30px 0;
       }
 
       .skillsSection h1 {
-        font-size: 1.9rem;
-        margin-bottom: 30px;
+        font-size: clamp(1.5rem, 4vw, 1.9rem);
+        margin-bottom: 20px;
       }
 
       .skills-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
+        gap: 20px;
       }
 
       .skill-category {
         background-color: rgb(18, 18, 62);
-        padding: 25px;
+        padding: 20px;
         border-radius: 10px;
         border-top: 3px solid rgb(169, 86, 246);
       }
 
       .skill-category h3 {
         color: rgb(169, 169, 241);
-        font-size: 1rem;
-        margin-bottom: 15px;
+        font-size: 0.95rem;
+        margin-bottom: 12px;
       }
 
       .skill-category .skill-items {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 8px;
       }
 
       .skill-category .skill-item {
         background-color: rgb(0, 0, 33);
         color: #ccc;
-        padding: 5px 14px;
+        padding: 4px 12px;
         border-radius: 20px;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         border: 1px solid #333;
         transition: 0.3s;
       }
@@ -346,14 +375,18 @@
         color: white;
       }
 
+      /* ===== FOOTER ===== */
       footer {
         background-color: rgb(21, 21, 46);
+        margin-top: 30px;
       }
 
       .footer {
         display: flex;
-        padding: 23px 122px;
-        justify-content: space-evenly;
+        padding: 20px 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
       }
 
       .footer ul {
@@ -361,13 +394,14 @@
       }
 
       .footer ul li {
-        margin: 10px 0;
+        margin: 8px 0;
       }
 
       .footer ul li a {
         text-decoration: none;
         color: white;
         transition: 0.3s;
+        font-size: 0.9rem;
       }
 
       .footer ul li a:hover {
@@ -375,71 +409,133 @@
         padding-left: 5px;
       }
 
-      .footer > div {
-        width: 223px;
-      }
-
       footer .footer-rights {
         text-align: center;
         color: gray;
         padding: 12px 0;
+        font-size: 0.8rem;
       }
 
-      /* Section divider */
-      .section-divider {
-        border: 0;
-        background-color: rgb(149, 149, 241);
-        height: 1.2px;
-        margin: 40px 84px;
-      }
-
+      /* ===== RESPONSIVE FIXES ===== */
       @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          height: auto;
+          padding: 15px 20px;
+          gap: 10px;
+        }
+
+        nav ul {
+          gap: 10px;
+        }
+
+        nav ul li a {
+          font-size: 0.8rem;
+        }
+
         .firstSection {
           flex-direction: column;
-          margin: 50px 0;
+          text-align: center;
+          padding: 20px 15px;
         }
+
         .firstSection > div {
-          width: 80%;
+          max-width: 100%;
+          min-width: auto;
+          width: 100%;
         }
-        .leftSection {
-          font-size: 2rem;
+
+        .leftSection .buttons {
+          justify-content: center;
         }
+
         .leftSection .btn {
-          padding: 8px 20px;
-          font-size: 12px;
-          min-width: 100px;
+          flex: 1 1 100%;
+          max-width: 200px;
+        }
+
+        .rightSection img {
+          max-width: 280px;
         }
 
         .about-content {
-          flex-direction: column;
-          padding: 20px;
-        }
-
-        .about-image {
-          flex: 0 0 auto;
+          flex-direction: column-reverse;
+          text-align: center;
+          padding: 20px 15px;
         }
 
         .about-image img {
-          width: 150px;
-          height: 150px;
+          width: 120px;
+          height: 120px;
         }
 
-        .secondSection .box {
-          display: none;
+        .secondSection .vertical {
+          padding: 15px;
         }
+
         .projects-grid {
           grid-template-columns: 1fr;
         }
+
         .skills-grid {
           grid-template-columns: 1fr;
         }
+
         .footer {
           flex-direction: column;
-          padding: 23px 40px;
+          align-items: center;
+          text-align: center;
+          padding: 20px;
         }
-        .footer > div {
-          width: 100%;
-          margin-bottom: 20px;
+
+        .footer ul li a:hover {
+          padding-left: 0;
+        }
+
+        .section-divider {
+          margin: 20px 15px;
+        }
+      }
+
+      /* ===== SMALL PHONES ===== */
+      @media (max-width: 480px) {
+        .left {
+          font-size: 1rem;
+        }
+
+        nav ul li a {
+          font-size: 0.7rem;
+        }
+
+        .leftSection {
+          font-size: 1.6rem;
+        }
+
+        .leftSection .btn {
+          font-size: 0.75rem;
+          padding: 8px 15px;
+          min-width: 100px;
+        }
+
+        .rightSection img {
+          max-width: 220px;
+        }
+
+        .about-image img {
+          width: 100px;
+          height: 100px;
+        }
+
+        .project-card {
+          padding: 15px;
+        }
+
+        .project-card h3 {
+          font-size: 1rem;
+        }
+
+        .skill-category {
+          padding: 15px;
         }
       }
     </style>
@@ -447,20 +543,21 @@
   <body>
     <header>
       <nav>
-        <div class="left">Yogeshwari's Portfolio</div>
+        <div class="left">🚀 Yogeshwari's Portfolio</div>
         <div class="right">
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact Me</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
       </nav>
     </header>
 
     <main>
+      <!-- HOME SECTION -->
       <section class="firstSection" id="home">
         <div class="leftSection">
           Hi, My name is <span class="purple">Yogeshwari Joshi</span>
@@ -481,18 +578,13 @@
         </div>
 
         <div class="rightSection">
-          <img
-            src="me.jpeg"
-            alt="Yogeshwari's Image"
-            width="500px"
-            height="400px"
-          />
+          <img src="me.jpeg" alt="Yogeshwari's Image" />
         </div>
       </section>
 
       <hr class="section-divider" />
 
-      <!-- About Section -->
+      <!-- ABOUT SECTION -->
       <section class="aboutSection" id="about">
         <span class="text-gray">Get to know me</span>
         <h1>About Me</h1>
@@ -543,7 +635,7 @@
 
       <hr class="section-divider" />
 
-      <!-- Experience Section -->
+      <!-- EXPERIENCE SECTION -->
       <section class="secondSection">
         <span class="text-gray">What I have done so far</span>
         <h1>Experience</h1>
@@ -624,7 +716,7 @@
 
       <hr class="section-divider" />
 
-      <!-- Projects Section -->
+      <!-- PROJECTS SECTION -->
       <section class="projectsSection" id="projects">
         <span class="text-gray">My Work</span>
         <h1>Projects</h1>
@@ -636,15 +728,7 @@
               management, room booking, billing, inventory, and notification
               services through scalable REST APIs.
             </p>
-            <ul
-              style="
-                color: #ccc;
-                font-size: 0.85rem;
-                margin-top: 10px;
-                padding-left: 20px;
-                line-height: 1.8;
-              "
-            >
+            <ul>
               <li>Implemented RESTful APIs using Spring Boot and Spring MVC</li>
               <li>
                 Seamless communication between services using OpenFeign and
@@ -673,15 +757,7 @@
               actions from video inputs using supervised machine learning
               techniques.
             </p>
-            <ul
-              style="
-                color: #ccc;
-                font-size: 0.85rem;
-                margin-top: 10px;
-                padding-left: 20px;
-                line-height: 1.8;
-              "
-            >
+            <ul>
               <li>Built a supervised learning model using the UCF50 dataset</li>
               <li>
                 CNN for feature extraction and ELM for action classification
@@ -722,15 +798,7 @@
               Built a web application with full CRUD operations for managing
               voters, candidates, and election data efficiently.
             </p>
-            <ul
-              style="
-                color: #ccc;
-                font-size: 0.85rem;
-                margin-top: 10px;
-                padding-left: 20px;
-                line-height: 1.8;
-              "
-            >
+            <ul>
               <li>
                 Complete CRUD operations for voter and candidate management
               </li>
@@ -749,7 +817,7 @@
 
       <hr class="section-divider" />
 
-      <!-- Skills Section -->
+      <!-- SKILLS SECTION -->
       <section class="skillsSection" id="skills">
         <span class="text-gray">My Expertise</span>
         <h1>Skills</h1>
